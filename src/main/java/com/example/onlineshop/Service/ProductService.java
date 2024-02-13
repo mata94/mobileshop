@@ -1,11 +1,10 @@
-package com.example.webshop.Service;
+package com.example.onlineshop.Service;
 
-import com.example.webshop.models.Product;
-import com.example.webshop.repository.ProductRepository;
+import com.example.onlineshop.models.Product;
+import com.example.onlineshop.repository.ProductRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
