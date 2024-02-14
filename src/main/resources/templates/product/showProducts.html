@@ -10,6 +10,14 @@
     <style>
         body {
             margin-bottom: 60px;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
+                margin: 0; /* Remove default margin */
+                padding: 0; /* Remove default padding */
+
         }
 
         header {
@@ -51,21 +59,16 @@
         h1 {
             margin: 0;
             text-align: center;
-            margin-left:320px;
+            margin-left:220px;
         }
 
         footer {
 
-            margin-bottom:-100px;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
             background-color: #808080;
             padding: 10px;
             color: #fff;
             text-align: left;
-            margin-top: 20px;
+            margin-top: auto; /* Push the footer to the bottom */
         }
         .tablicaUfooteru {
             width: 500px;
@@ -114,17 +117,17 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-        <button th:if="${currentUser}" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button    class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" >
+        <div th:if="${currentUser}" class="collapse navbar-collapse" >
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Admin cp
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" th:href="@{/allProducts}">All Products</a>
                         <a class="dropdown-item" th:href="@{/private/allBrands}">All Brands</a>
                         <a class="dropdown-item" th:href="@{/private/allOrders}">All Orders</a>
