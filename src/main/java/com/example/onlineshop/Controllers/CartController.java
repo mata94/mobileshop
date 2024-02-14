@@ -49,7 +49,7 @@ public class CartController {
         try{
             List<Cart> carts = cartService.findAllCartItems();
             model.addAttribute("carts",carts);
-            return "/cart/cartProductList";
+            return "cart/cartProductList";
         }catch (RuntimeException e){
             model.addAttribute("error",e.getMessage());
             return "errorPage/errorPage";
