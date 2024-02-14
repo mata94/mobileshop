@@ -103,6 +103,7 @@
         color: grey; /* Change color on hover if desired */
         text-decoration: none;
     }
+
     </style>
 </head>
 <body>
@@ -129,6 +130,7 @@
                         <a class="dropdown-item" th:href="@{/allProducts}">All Products</a>
                         <a class="dropdown-item" th:href="@{/private/allBrands}">All Brands</a>
                         <a class="dropdown-item" th:href="@{/private/allOrders}">All Orders</a>
+                        <a class="dropdown-item" th:href="@{/private/users}">All Users</a>
 
                     </div>
                 </li>
@@ -180,11 +182,11 @@
             <td>
                 <div>
                     <form th:action="@{/private/deleteOrder/{orderId}(orderId=${order.id})}" method="post" class="d-inline">
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-grey">Delete</button>
                     </form>
 
                     <form th:action="@{/private/oderDetails/{orderId}(orderId=${order.id})}" method="get" class="d-inline">
-                        <button type="submit" class="btn btn-primary d-inline-block">View Details</button>
+                        <button type="submit" class="btn btn-grey d-inline-block">View Details</button>
                     </form>
                 </div>
             </td>
