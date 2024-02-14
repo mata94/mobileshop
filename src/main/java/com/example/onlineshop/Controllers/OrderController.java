@@ -63,13 +63,11 @@ public class OrderController {
 
     @GetMapping("/private/allOrders")
     public String allOrders(Model model){
-        User user = this.userService.findCurrentUser();
 
         List<Orders>orders = orderRepository.findAll();
         model.addAttribute("orders",orders);
-        model.addAttribute("currentUser",user.isAdmin());
 
-       return "order/allOrders";
+        return "order/allOrders";
     }
     @PostMapping("/private/deleteOrder/{orderId}")
     public String deleteOrder(Model model, @PathVariable Long orderId){
