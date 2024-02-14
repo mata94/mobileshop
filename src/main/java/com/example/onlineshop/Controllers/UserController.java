@@ -69,7 +69,11 @@ public class UserController {
     @GetMapping("/private/user")
     @PreAuthorize("hasAuthority('ADMIN')")
     public String addUserForm(Model model){
+        User user = this.userService.findCurrentUser();
+
         model.addAttribute("user",new User());
+        model.addAttribute("currentUser",user.isAdmin());
+
         return"users/add";
     }
 

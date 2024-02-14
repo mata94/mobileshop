@@ -2,8 +2,10 @@ package com.example.onlineshop.Controllers;
 
 import com.example.onlineshop.Service.CartService;
 import com.example.onlineshop.Service.OrderService;
+import com.example.onlineshop.Service.UserService;
 import com.example.onlineshop.models.OrderItem;
 import com.example.onlineshop.models.Orders;
+import com.example.onlineshop.models.User;
 import com.example.onlineshop.repository.OrderRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,8 @@ public class OrderController {
 
     @Autowired
     OrderRepository orderRepository;
+
+    UserService userService;
 
 
     @GetMapping("/checkoutItems")
@@ -59,9 +63,11 @@ public class OrderController {
 
     @GetMapping("/private/allOrders")
     public String allOrders(Model model){
+        User user = this.userService.findCurrentUser();
 
         List<Orders>orders = orderRepository.findAll();
         model.addAttribute("orders",orders);
+        model.addAttribute("currentUser",user.isAdmin());
 
        return "order/allOrders";
     }
