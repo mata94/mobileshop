@@ -43,7 +43,7 @@ public class CartController {
         }
     }
 
-    @GetMapping("/cartList/")
+    @GetMapping("/cartList")
     public String cartList(Model model)
     {
         try{
