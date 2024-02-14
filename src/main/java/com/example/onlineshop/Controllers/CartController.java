@@ -44,7 +44,6 @@ public class CartController {
     }
 
     @GetMapping("/cartList/")
-    @PreAuthorize("hasAuthority('USER')")
     public String cartList(Model model)
     {
         try{
