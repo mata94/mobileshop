@@ -61,7 +61,7 @@ public class CartController {
     @PreAuthorize("hasAuthority('USER')")
     public String deleteProductFromCart(@PathVariable Long id){
         this.cartService.deleteCart(id);
-        return "redirect:/cartList/";
+        return "redirect:/cartList";
     }
 
 }
