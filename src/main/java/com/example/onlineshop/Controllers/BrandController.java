@@ -60,7 +60,7 @@ public class BrandController {
     public String deleteBrand(@PathVariable Long id){
         this.brandService.delete(id);
 
-        return "redirect:/allBrands";
+        return "redirect:/private/allBrands";
     }
 
     @PostMapping("/private/updateBrand/{id}")
@@ -74,7 +74,7 @@ public class BrandController {
           return "brand/updateBrand";
         }
 
-        return "redirect:/allBrands";
+        return "redirect:/private/allBrands";
     }
 
     @PostMapping("/private/updateBrand")
@@ -86,6 +86,6 @@ public class BrandController {
             return "brand/updateBrand";
         }
         this.brandService.save(brand);
-        return "redirect:/allBrands";
+        return "redirect:/private/allBrands";
     }
 }
