@@ -53,7 +53,7 @@ public class ProductController {
         if(result.hasErrors()){
             model.addAttribute("product",product);
             model.addAttribute("brands", this.brandService.findAllBrands());
-            return "redirect:/private/showProductForm";
+            return "product/createProduct";
         }else{
             try {
                 this.productService.saveProduct(product,image);
