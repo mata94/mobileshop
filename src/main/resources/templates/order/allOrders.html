@@ -164,17 +164,17 @@
     <table class="table">
         <thead>
         <tr>
-            <th>address</th>
+            <th>adress</th>
             <th>phone number</th>
-            <th>totalPrice</th>
+            <th>total price</th>
             <th>user</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="order : ${orders}">
-            <td th:text="${order.address}">Address</td>
+            <td th:text="${order.address}">Adress</td>
             <td th:text="${order.number}">Quantity</td>
-            <td th:text="${order.totalPrice}">TotalPrice</td>
+            <td th:text="${order.totalPrice}">Total Price</td>
             <td th:text="${order.user.email}">email</td>
             <td>
                 <div>

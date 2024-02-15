@@ -57,7 +57,7 @@ public class ProductController {
         }else{
             try {
                 this.productService.saveProduct(product,image);
-                return "redirect:/private/showProductForm";
+                return "redirect:/allProducts";
             } catch (IOException e) {
                 model.addAttribute("error",e.getMessage());
                 return "errorPage/errorPage";
