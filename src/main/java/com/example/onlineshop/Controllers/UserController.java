@@ -47,7 +47,7 @@ public class UserController {
                 return "redirect:/auth/login";
             }catch (IllegalArgumentException e) {
                 model.addAttribute("error", e.getMessage());
-                return "/users/registerUser";
+                return "users/registerUser";
             }
         }
     }
@@ -83,14 +83,14 @@ public class UserController {
     {
         if(result.hasErrors()){
             model.addAttribute("user",user);
-            return "/users/add";
+            return "users/add";
         }else {
             try{
                 this.userService.checkEmailAndLoadUser(user);
                 return "redirect:/private/users";
             }catch (IllegalArgumentException e){
                 model.addAttribute("error",e.getMessage());
-                return "/users/add";
+                return "users/add";
             }
         }
     }
