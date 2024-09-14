@@ -23,6 +23,7 @@ services:
       - rest-network
     environment:
       - MYSQL_ROOT_PASSWORD=lozinka
+      - MYSQL_HOST=mysql
       - MYSQL_DATABASE=onlineshop
       - MYSQL_USER=user
       - MYSQL_PASSWORD=lozinka
