@@ -51,6 +51,8 @@ public class SecurityConfig {
                 .requestMatchers("/allProducts")
                 .permitAll()
                 .requestMatchers("/").permitAll()
+                .requestMatchers("/image/**", "/css/**", "/js/**","/images/**").permitAll()
+                .requestMatchers("/uploads/**").permitAll()
                 .requestMatchers("/private/**").hasAuthority("ADMIN")
                 .anyRequest()
                 .authenticated()
