@@ -26,6 +26,11 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @GetMapping("/")
+    public String home() {
+        return "redirect:/allProducts";
+    }
+
     @GetMapping("/auth/register")
     public String registerForm(Model model)
     {

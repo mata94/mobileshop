@@ -91,4 +91,14 @@ public class UserService {
         throw new RuntimeException("Ne mozemo pronaci trenutnog usera");
     }
 
+    public User findCurrentUserForAllProducts()
+    {
+        if (this.getCurrentUserId() != null) {
+            Optional<User> user = userRepository.findById(this.getCurrentUserId());
+            return user.orElse(null);
+        }
+
+        return null;
+    }
+
 }
